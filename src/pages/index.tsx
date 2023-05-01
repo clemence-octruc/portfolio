@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import {Inter, Open_Sans} from 'next/font/google'
 import {SmoothCorners} from 'react-smooth-corners'
+import {Line} from "@/components/line"
 
 const inter = Inter({subsets: ['latin']})
 const open_sans = Open_Sans({subsets: ['latin']})
@@ -33,12 +34,12 @@ const hrefs = [{
 const myselfText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit. Integer eget aliquet nibh praesent tristique magna sit amet purus. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Lobortis elementum nibh tellus molestie nunc non blandit. Nulla facilisi etiam dignissim diam.`
 const myselfText2 = `Consequat ac felis donec et odio pellentesque diam volutpat. Integer fe ugiat scelerisque varius morbi enim. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Fermentum odio eu feugiat pretium nibh ipsum consequat. Sit amet tellus cras adipiscing enim eu. Vestibulum morbi blandit cursus risus at ultrices mi tempus. Nunc consequat interdum varius sit amet. Nisl condimentum id venenatis a.`
 const list = hrefs.map(e =>
-    <div key={e.text} className='px-20 flex items-center'>
+    <a key={e.text} className='px-20 flex items-center' href={`#${e.text}`}>
         <div className="mr-3" dangerouslySetInnerHTML={{__html: e.icon}}></div>
-        {e.text}</div>
+        {e.text}</a>
 )
 
-// Languages
+
 const languages = ["Javascript", "Python", "Typescript", "HTML5", "Dart", "CSS3"]
 const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "REST API, implémentation d'APIs", '3rd party sign in',]
 const frameworks = [["svelte.png", "Svelte, Sveltekit"], ["flutter.png", "Flutter"], ["nodejs.png", "Nodejs"], ["react.png", "React"]]
@@ -47,16 +48,56 @@ const languagesList = languages.map(e =>
     <div key={e} className="flex items-center"><img className="mr-4 h-10" src={"icons/" + e + ".png"}/><p>{e}</p></div>
 )
 const frameworksList = frameworks.map(e =>
-    <div key={e[0]} className="flex items items-center"><img className="mr-4 h-12" src={"icons/" + e[0]}/><p>{e[1]}</p></div>
+    <div key={e[0]} className="flex items items-center"><img className="mr-4 h-12" src={"icons/" + e[0]}/><p>{e[1]}</p>
+    </div>
 )
-const outilsList = outils.map((e, i) => <img key={e} src={`icons/${e}.png`} className="object-scale-down h-10 max-w-[12rem]"/>)
-const technosList = technos.map(e=> <p key={e} className="">{e}</p>)
+const outilsList = outils.map((e) => <img key={e} src={`icons/${e}.png`}
+                                             className="object-scale-down h-10 max-w-[12rem]"/>)
+const technosList = technos.map(e => <p key={e} className="">{e}</p>)
+
+const projects = [
+    {
+        title: "Winhalla",
+        date: "2020-2022",
+        type: "Site web, application mobile, backend",
+        href: "https://winhalla.app",
+        description: `Un produit destiné aux joueurs du jeu Brawlhalla, dont le principe est d'offrir des récompenses en jeu en échange de temps passé sur l'application. Les récompenses sont financées par la publicité.
+        <br><br>D'abord censé être un site web, a dû être transformé en une application à cause de limitations des services de publicité.
+        <br><br>Svelte ne supportant pas de compilation vers une application native (de la même manière que react native), nous avons choisi de recoder le produit sous forme d'application avec Flutter`,
+        stack: "NodeJS, Svelte, Flutter"
+    }, {
+        title: "Balapp",
+        href: "https://github.com/MDL-Jules-Verne/balapp",
+        date: "2022-2023",
+        type: "Application mobile, backend en local",
+        description: `Application permettant d'optimiser les processus d'organisation et de déroulement d'évènements nécessitant billets d'entrée et vestiaires. Au départ, était destiné à l'organisation de bals de promo, maintenant adapté pour des évènements plus diversifiés
+        <br><br>Fonctionne en LAN entre un serveur sous ExpressJS et un nombre (quasi) illimité de smartphones sous Flutter
+<br> Génère, enregistre et vérifie des billets par QRcode. <br>Enregistre et restitue des objets laissés aux vestiaires. <br>Permet recherche et modification des billets depuis les téléphones
+<br>Intègre un mode hors ligne en cas de défaut du réseau local et un dashboard pour une administration sans connaissance du code depuis le serveur`,
+        stack: "NodeJS, HTML, Flutter"
+    },
+]
+const projectsList = projects.map((e,i) => <><div key={e.title}
+                                            className="shadow-2xl rounded-3xl mt-2 mr-10 bg-white px-16 py-11 text-gray">
+    <a href={e.href} className="hover:underline decoration-2">
+        <div className="flex items-center">
+            <h2 className="   text-3xl text-black mb-1.5 font-bold">{e.title}</h2>
+            <p className="text-gray font-bold ml-5 mt-1">{e.date}</p>
+        </div>
+        <p className="font-semibold">{e.type}</p>
+    </a>
+    <p className={inter.className + " mt-6"}
+       dangerouslySetInnerHTML={{__html: e.description + "... <span class='font-bold text-black hover:underline hover:cursor-pointer'>Lire plus</span>"}}></p>
+    <p className="font-semibold mt-4">Stack: {e.stack}</p>
+</div>
+    {i<projects.length-1 ? <div key={e.title} className="flex flex-col items-center w-min ml-6 my-1"><Line></Line><Line></Line><p className="font-bold my-1.5 text-gray">2022</p> <Line></Line><Line></Line></div>: ""}</>)
+
 export default function Home() {
     return (<div className={inter.className}>
         <nav className="fixed bg-black px-10 w-full text-white flex justify-center text-sm py-4">
             {list}
         </nav>
-        <main className="pt-28 px-60 mb-20">
+        <main className="pt-28 px-60 mb-20" id="Qui suis-je">
             <div className="flex justify-center space-x-36">
                 <div className={open_sans.className}>
                     <h1 className="text-[3.4rem] leading-[1.1] font-extrabold mt-20">Clement <br/> Octruc</h1>
@@ -67,14 +108,15 @@ export default function Home() {
                 </div>
                 <img src="screens.png" className="h-1/2 w-auto"/>
             </div>
-            <div className={open_sans.className+" mx-20"}>
-                <h2 className="text-3xl mt-20 font-bold">Compétences</h2>
+            <div className={open_sans.className + " mx-20"} id="Compétences">
+                <h2 className="text-3xl pt-20 font-bold">Compétences</h2>
                 <div className="flex items-start flex-wrap gap-x-20">
 
                     <div
                         className="bg-white shadow-2xl pt-10 pb-11 px-16 mt-9 rounded-3xl">
                         <h3 className="font-bold text-2xl">Langages :</h3>
-                        <div className="grid-cols-2 px-3 grid-rows-3 grid gap-x-16 gap-y-6 text-lg mt-8 text-gray font-semibold">{languagesList}</div>
+                        <div
+                            className="grid-cols-2 px-3 grid-rows-3 grid gap-x-16 gap-y-6 text-lg mt-8 text-gray font-semibold">{languagesList}</div>
                     </div>
                     <div
                         className="bg-white shadow-2xl py-10 px-16 mt-9 w-1/4 rounded-3xl">
@@ -84,7 +126,8 @@ export default function Home() {
                     <div
                         className="bg-white shadow-2xl py-8 px-12 mt-9 rounded-3xl">
                         <h3 className="font-bold text-2xl">Frameworks :</h3>
-                        <div className="grid-cols-1 grid-rows-3 grid gap-6 mt-4 text-lg font-semibold text-gray">{frameworksList}</div>
+                        <div
+                            className="grid-cols-1 grid-rows-3 grid gap-6 mt-4 text-lg font-semibold text-gray">{frameworksList}</div>
                     </div>
                     <div
                         className="bg-white  shadow-2xl pt-8 pb-12 px-12 mt-9  rounded-3xl w-1/2">
@@ -93,6 +136,25 @@ export default function Home() {
                     </div>
 
                 </div>
+            </div>
+            <div className={open_sans.className + " mx-28"} id="Parcours & projets">
+                <h2 className="text-3xl pt-20 font-bold">Projets</h2>
+                <div className="text-lg ml-5 flex font-bold  text-gray mt-8">
+                    <div className="flex items-center flex-col">
+                        <p className="mb-1.5">2018</p>
+                        <Line></Line>
+                        <Line></Line>
+                        <Line></Line>
+                        <p className="my-1.5">2020</p>
+                        <Line></Line>
+                        <Line></Line>
+                    </div>
+                    <p className="text-xl mt-12 font-bold ml-16">Divers projets informatiques (arduino, bots
+                        discord,
+                        ect...)</p>
+                </div>
+                {projectsList}
+
             </div>
         </main>
     </div>)
