@@ -62,7 +62,7 @@ const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "REST API, i
 const frameworks = [["svelte.png", "Svelte, Sveltekit"], ["flutter.png", "Flutter"], ["nodejs.png", "Nodejs"], ["react.png", "React"]]
 const outils = ["vscode", "github", "git", "gcp", "figma", "playconsole", "analytics", "admob", "mongodb", "tailwind", "firebase"]
 const languagesList = languages.map(e =>
-    <div key={e} className="flex items-center"><img className="mr-4 h-9" src={"icons/" + e + ".png"}/><p>{e}</p></div>
+    <div key={e} className="flex items-center"><img className="mr-4 h-9" src={"icons/" + e.toLowerCase() + ".png"}/><p>{e}</p></div>
 )
 const frameworksList = frameworks.map(e =>
     <div key={e[0]} className="flex items items-center"><img className="mr-4 h-10" src={"icons/" + e[0]}/><p>{e[1]}</p>
