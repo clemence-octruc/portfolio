@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     @apply bg-background
+}
+
+input, textarea {
+    @apply bg-background rounded-xl px-4 py-2;
+    border: 1px solid rgba(64, 64, 64, 0.4);
 }
