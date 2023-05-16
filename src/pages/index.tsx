@@ -10,7 +10,7 @@ const open_sans = Open_Sans({subsets: ['latin']})
 
 const list = hrefs.map(e =>
     <a key={e.text} className='lg:px-20 px-4 flex items-center' href={`#${e.text}`}>
-        <div className="mr-2 lg:mr-3" dangerouslySetInnerHTML={{__html: e.icon}}></div>
+        <div className="mr-2 lg:mr-3" >{e.icon}</div>
         <div className="lg:block hidden">{e.text}</div>
     </a>
 )
