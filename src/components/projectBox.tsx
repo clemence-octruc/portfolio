@@ -15,8 +15,7 @@ export function ProjectBox({project, inter}: { project: Project, inter: NextFont
             </div>
             <p className="font-semibold">{project.type}</p>
         </a>
-        <p className={inter.className + " mt-6 cursor-pointer"} onClick={() => setIsOpened(!isOpened)}
-           dangerouslySetInnerHTML={{__html: project.description + `... <span class='font-bold text-black hover:underline'>Lire ${isOpened? "moins" : "plus"}</span>`}}></p>
+        <p className={inter.className + " mt-6 cursor-pointer"} onClick={() => setIsOpened(!isOpened)}>{project.description} ... <span className='font-bold text-black hover:underline'>Lire {isOpened? "moins" : "plus"}</span></p>
         {isOpened && <div className="flex flex-wrap justify-center gap-x-8 gap-y-8 mt-12 items-center">{extendedDescList}</div>}
         <p className={`font-semibold ${isOpened ? "mt-12" : "mt-4"}`}>Stack: {project.stack}</p>
         <p className="">et {project.extendedStack}</p>
