@@ -73,7 +73,7 @@ export default function Home() {
             <title>Clément Octruc - CV/portfolio développeur</title>
             <meta name="description"
                   content="Mon CV/portfolio retraçant mes expériences, compétences et projets en développement informatique."/>
-            <link rel="icon" href="/images/favicon.png"/>
+            <link rel="icon" href="/favicon.png"/>
         </Head>
         <div className={inter.className}>
 
