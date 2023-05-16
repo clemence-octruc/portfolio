@@ -213,7 +213,7 @@ export default function Home() {
                 <div className="mt-24 mx-5 lg:mx-0 lg:w-3/5">
                     <h2 className="text-[1.75rem] lg:text-3xl font-bold">Travaillons ensemble !</h2>
 
-                    <p className="text-lg text-gray mt-4" style={inter.style}>Je suis disponible à partir de Juillet 2023 dans toute la France (de préférence région parisienne). D'ici là, je suis ouvert à apprendre de nouvelles technologies si vous en utilisez que je ne maîtrise pas encore</p>
+                    <p className="text-lg text-gray mt-4" style={inter.style}>Je suis disponible à partir de Juillet 2023 dans toute la France (de préférence région parisienne). D&apos;ici là, je suis ouvert à apprendre de nouvelles technologies si vous en utilisez que je ne maîtrise pas encore</p>
 
                     <p className="font-bold mt-3">Développeur back-end - Développeur front-end - Intégrateur web -
                         Développeur mobile</p>
