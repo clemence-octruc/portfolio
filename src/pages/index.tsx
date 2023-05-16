@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import {Inter, Open_Sans} from 'next/font/google'
-import {SmoothCorners} from 'react-smooth-corners'
 import {Line} from "@/components/line"
 import {ProjectBox} from "@/components/projectBox";
-import {useState} from "react";
+import {Fragment, useState} from "react";
+import Head from "next/head";
 
 const inter = Inter({subsets: ['latin']})
 const open_sans = Open_Sans({subsets: ['latin']})
@@ -62,13 +61,13 @@ const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "REST API, i
 const frameworks = [["svelte.png", "Svelte, Sveltekit"], ["flutter.png", "Flutter"], ["nodejs.png", "Nodejs"], ["react.png", "React"]]
 const outils = ["vscode", "github", "git", "gcp", "figma", "playconsole", "analytics", "admob", "mongodb", "tailwind", "firebase"]
 const languagesList = languages.map(e =>
-    <div key={e} className="flex items-center"><img className="mr-4 h-9" src={"icons/" + e.toLowerCase() + ".png"}/><p>{e}</p></div>
+    <div key={e} className="flex items-center"><img className="mr-4 h-9" alt={e} src={"icons/" + e.toLowerCase() + ".png"}/><p>{e}</p></div>
 )
 const frameworksList = frameworks.map(e =>
-    <div key={e[0]} className="flex items items-center"><img className="mr-4 h-10" src={"icons/" + e[0]}/><p>{e[1]}</p>
+    <div key={e[0]} className="flex items items-center"><img className="mr-4 h-10" src={"icons/" + e[0]} alt={e[0]}/><p>{e[1]}</p>
     </div>
 )
-const outilsList = outils.map((e) => <img key={e} src={`icons/${e}.png`}
+const outilsList = outils.map((e) => <img alt={e} key={e} src={`icons/${e}.png`}
                                           className="object-scale-down h-9 max-w-[10rem]"/>)
 const technosList = technos.map(e => <p key={e} className="">{e}</p>)
 
@@ -99,11 +98,11 @@ const projects: Project[] = [
         assets: ["screens/billets+search.png", "screens/vestiaire.png", "screens/dashboard.png"]
     },
 ]
-const projectsList = projects.map((e, i) => <>
-    <ProjectBox project={e} inter={inter}></ProjectBox>
+const projectsList = projects.map((e, i) => <Fragment key={e.title}>
+    <ProjectBox project={e}  inter={inter}></ProjectBox>
     {i < projects.length - 1 ?
-        <div key={e.title + "line"} className="flex flex-col items-center w-min ml-6 my-1"><Line></Line><Line></Line><p
-            className="font-bold my-1.5 text-gray">2022</p> <Line></Line><Line></Line></div> : ""}</>)
+        <div className="flex flex-col items-center w-min ml-6 my-1"><Line></Line><Line></Line><p
+            className="font-bold my-1.5 text-gray">2022</p> <Line></Line><Line></Line></div> : ""}</Fragment>)
 
 export default function Home() {
 
@@ -139,7 +138,13 @@ export default function Home() {
 
 
 
-    return (<div className={inter.className}>
+    return (<>
+        <Head>
+            <title>Clément Octruc - CV/portfolio développeur</title>
+            <meta name="description" content="Mon CV/portfolio retraçant mes expériences, compétences et projets en développement informatique." />
+        </Head>
+        <div className={inter.className}>
+
         <nav className="fixed bg-black px-10 w-full text-white flex lg:justify-center justify-around text-sm py-4">
             {list}
         </nav>
@@ -150,16 +155,16 @@ export default function Home() {
                         <div>
                             <h1 className="lg:text-[3.4rem] text-[2.5rem] leading-[1.1] font-extrabold ">Clement <br/> Octruc
                             </h1>
-                            <h3 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeur <span
+                            <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeur <span
                                 className="text-primary">web</span> <br className="hidden lg:block"/> et <span
-                                className="text-primary">mobile</span></h3></div>
-                        <div className="lg:hidden"><img src="screens.png" className="w-auto"/></div>
+                                className="text-primary">mobile</span></h2></div>
+                        <div className="lg:hidden"><img alt="" src="screens.png" className="w-auto"/></div>
                     </div>
 
                     <p className="text-gray mt-12 max-w-lg mx-2 lg:mx-0">{myselfText}</p>
                     <p className="text-gray mt-4 max-w-lg mx-2 lg:mx-0">{myselfText2}</p>
                 </div>
-                <img src="screens.png" className="h-1/2 hidden lg:block w-auto"/>
+                <img src="screens.png" alt="" className="h-1/2 hidden lg:block w-auto"/>
             </div>
             <div className={open_sans.className + " mx-2 lg:mx-28"} id="Compétences">
                 <h2 className="text-3xl pt-28 font-bold">Compétences</h2>
@@ -206,8 +211,8 @@ export default function Home() {
                         discord,
                         ect...)</p>
                 </div>
-                {projectsList}
 
+                <div>{projectsList}</div>
             </div>
             <div className="lg:flex justify-evenly lg:pt-28 pt-12 lg:mx-32 lg:gap-x-10" style={open_sans.style} id="Contact">
                 <div className="mt-24 mx-5 lg:mx-0 lg:w-3/5">
@@ -224,12 +229,12 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="shadow-xl rounded-[1.75rem] lg:mr-10 bg-white px-16 py-11 mt-10 lg:mt-0 lg:w-2/5">
-                    <h3 className="text-lg font-bold mb-2">Nom:</h3>
-                    <input className="w-full" value={nom} onChange={e => setNom(e.target.value)}/>
-                    <h3 className="text-lg font-bold mt-4 mb-2">Email:</h3>
-                    <input type="email" className="w-full" value={email} onChange={e => setEmail(e.target.value)}/>
-                    <h3 className="text-lg font-bold mt-4 mb-2">Message:</h3>
-                    <textarea className="h-36 w-full" value={message} onChange={e => setMessage(e.target.value)}/>
+                    <label htmlFor="nom" className="text-lg font-bold mb-2">Nom:</label>
+                    <input id="nom" className="w-full" value={nom} onChange={e => setNom(e.target.value)}/>
+                    <label htmlFor="email" className="text-lg font-bold mt-4 mb-2">Email:</label>
+                    <input id="email" type="email" className="w-full" value={email} onChange={e => setEmail(e.target.value)}/>
+                    <label htmlFor="message" className="text-lg font-bold mt-4 mb-2">Message:</label>
+                    <textarea id="message" className="h-36 w-full" value={message} onChange={e => setMessage(e.target.value)}/>
                     <div className="flex justify-center items-center flex-col">
                         <input type="button" onClick={sendMessage} value="Envoyer"
                                className="cursor-pointer mt-8 bg-black text-background font-bold px-9 mb-2 py-3"/>
@@ -240,7 +245,7 @@ export default function Home() {
                 </div>
             </div>
         </main>
-    </div>)
+    </div></>)
 };
 
 export interface Project {

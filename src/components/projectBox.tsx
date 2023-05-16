@@ -5,7 +5,7 @@ import {useState} from "react";
 export function ProjectBox({project, inter}: { project: Project, inter: NextFont }) {
     const [isOpened, setIsOpened] = useState(false)
     const extendedDescList = project.extendedDesc.map((e, i) => <><p
-        className={inter.className + " mt-6 lg:w-[40%] w-full"}>{e}</p><img src={project.assets[i]} className="lg:w-[40%] w-full max-h-[17rem] object-scale-down"/></>)
+        className={inter.className + " mt-6 lg:w-[40%] w-full"}>{e}</p><img alt="Illustration projet" src={project.assets[i]} className="lg:w-[40%] w-full max-h-[17rem] object-scale-down"/></>)
     return (<div key={project.title}
                  className="shadow-xl rounded-[1.75rem] mt-2 lg:mr-10 bg-white lg:px-16 px-12 py-11 text-gray">
         <a href={project.href} className="hover:underline decoration-2">
