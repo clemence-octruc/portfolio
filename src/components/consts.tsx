@@ -26,7 +26,7 @@ export const projects: Project[] = [
         href: "https://github.com/MDL-Jules-Verne/balapp",
         date: "2022-2023",
         type: "Application mobile, backend en local",
-        description: `Application permettant d'optimiser les processus d'organisation et de déroulement d'évènements nécessitant billets d'entrée et vestiaires. Au départ, était destiné à l'organisation de bals de promo, maintenant adapté pour des évènements plus diversifiés
+        description: `Application permettant d'optimiser les processus d'organisation et de déroulement d'évènements nécessitant billets d'entrée et vestiaires. Au départ, était destiné à l'organisation de bals de promo, maintenant adapté pour des évènements plus diversifiés.
         Fonctionne en LAN entre un serveur sous ExpressJS et un nombre (quasi) illimité de smartphones sous Flutter`,
         stack: "NodeJS, HTML, Flutter",
         extendedStack: "MongoDB, ExpressJS, Figma, Websocket",
@@ -61,7 +61,7 @@ export const hrefs = [{
 }, {
     text: "Contact",
     icon: <svg className="w-8 h-8 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_6_8811)">
+        <g clipPath="url(#clip0_6_8811)">
             <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="white"/>
         </g>
         <defs>

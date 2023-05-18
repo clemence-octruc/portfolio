@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-    @apply bg-background
+    @apply bg-background;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 input, textarea {

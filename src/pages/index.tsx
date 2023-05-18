@@ -4,13 +4,16 @@ import {ProjectBox} from "@/components/projectBox";
 import {Fragment, useState} from "react";
 import Head from "next/head";
 import {frameworks, hrefs, languages, myselfText, myselfText2, outils, projects, technos} from "@/components/consts";
+import {animated, useSpring} from '@react-spring/web'
+import {Waypoint} from "react-waypoint";
+import FadeIn from "@/components/animatedComponents";
 
 const inter = Inter({subsets: ['latin']})
 const open_sans = Open_Sans({subsets: ['latin']})
 
 const list = hrefs.map(e =>
     <a key={e.text} className='lg:px-20 px-4 flex items-center' href={`#${e.text}`}>
-        <div className="mr-2 lg:mr-3" >{e.icon}</div>
+        <div className="mr-2 lg:mr-3">{e.icon}</div>
         <div className="lg:block hidden">{e.text}</div>
     </a>
 )
@@ -42,6 +45,7 @@ export default function Home() {
     const [message, setMessage] = useState('');
     const [sendStatus, setSendStatus] = useState('')
 
+
     function sendMessage() {
         fetch('https://discord.com/api/webhooks/1107336132523474944/Wv-68vu_h6wBFwdj9iMA1pr-0zocWRb8fat48pkNSkOMr-DjaqNc0GvjtHFTE9agTbQv', {
             method: 'POST',
@@ -67,6 +71,15 @@ export default function Home() {
             });
     }
 
+    const [inView, setInview] = useState(false);
+    const springs = useSpring({
+        from: {x: -100, opacity: 0},
+        to: {
+            x: !inView ? -100 : 0,
+            opacity: !inView ? 0 : 1,
+        },
+    })
+
 
     return (<>
         <Head>
@@ -77,7 +90,8 @@ export default function Home() {
         </Head>
         <div className={inter.className}>
 
-            <nav className="fixed bg-black px-10 w-full text-white flex lg:justify-center justify-around text-sm py-4">
+            <nav
+                className="fixed z-10 bg-black px-10 w-full text-white flex lg:justify-center justify-around text-sm py-4">
                 {list}
             </nav>
             <main className="pt-28 px-8 lg:px-60 mb-20" id="Qui suis-je">
@@ -96,34 +110,35 @@ export default function Home() {
                         <p className="text-gray mt-12 max-w-lg mx-2 lg:mx-0">{myselfText}</p>
                         <p className="text-gray mt-4 max-w-lg mx-2 lg:mx-0">{myselfText2}</p>
                     </div>
-                    <img src="screens.png" alt="" className="h-1/2 hidden lg:block w-auto"/>
+                    <FadeIn classes={"h-1/2 hidden lg:block w-auto"}><img src="screens.png" alt="" className=""/></FadeIn>
                 </div>
                 <div className={open_sans.className + " mx-2 lg:mx-20"} id="Compétences">
-                    <h2 className="text-3xl pt-28 font-bold">Compétences</h2>
+                    <h2 className="text-3xl pt-36 font-bold">Compétences</h2>
                     <div className="flex items-start flex-wrap gap-x-10 lg:gap-x-20">
 
-                        <div
-                            className="bg-white shadow-xl flex-grow lg:flex-grow-0 pt-10 pb-11 px-10 lg:px-12 mt-9 rounded-[1.75rem]">
+                        <FadeIn
+                            classes={"bg-white shadow-xl flex-grow lg:flex-grow-0 pt-10 pb-11 px-10 lg:px-12 mt-9 rounded-[1.75rem]"}>
                             <h3 className="font-bold text-xl">Langages :</h3>
                             <div
                                 className="grid-cols-2 px-3 grid-rows-3 grid gap-x-16 gap-y-6 mt-8 text-gray font-semibold">{languagesList}</div>
-                        </div>
-                        <div
-                            className="bg-white shadow-xl pt-10 pb-11 px-10 flex-grow lg:flex-grow-0 lg:px-12 mt-9 lg:w-1/3 rounded-[1.75rem]">
+                        </FadeIn>
+
+                        <FadeIn
+                            classes="bg-white shadow-xl pt-10 pb-11 px-10 flex-grow lg:flex-grow-0 lg:px-12 mt-9 lg:w-1/3 rounded-[1.75rem]">
                             <h3 className="font-bold text-xl">Technologies et pratiques :</h3>
                             <div className="flex flex-col px-3 mt-7 gap-y-4 font-semibold text-gray">{technosList}</div>
-                        </div>
-                        <div
-                            className="bg-white shadow-xl pt-10 pb-11 flex-grow lg:flex-grow-0 px-10 lg:px-12 mt-9 lg:w-[30%] rounded-[1.75rem]">
+                        </FadeIn>
+                        <FadeIn
+                            classes={"bg-white shadow-xl pt-10 pb-11 flex-grow lg:flex-grow-0 px-10 lg:px-12 mt-9 lg:w-[30%] rounded-[1.75rem]"}>
                             <h3 className="font-bold text-xl">Frameworks :</h3>
                             <div
                                 className="grid-cols-1 grid-rows-3 px-3 grid gap-6 flex-grow lg:flex-grow-0 mt-6 font-semibold text-gray">{frameworksList}</div>
-                        </div>
-                        <div
-                            className="bg-white  shadow-xl pt-10 pb-11 px-10 lg:px-12 mt-9  rounded-[1.75rem] lg:w-[50%]">
+                        </FadeIn>
+                        <FadeIn
+                            classes="bg-white  shadow-xl pt-10 pb-11 px-10 lg:px-12 mt-9  rounded-[1.75rem] lg:w-[50%]">
                             <h3 className="font-bold text-xl">Outils :</h3>
                             <div className="flex-wrap flex px-3 gap-x-6 gap-y-6 mt-4">{outilsList}</div>
-                        </div>
+                        </FadeIn>
 
                     </div>
                 </div>
@@ -165,13 +180,14 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="shadow-xl rounded-[1.75rem] lg:mr-10 bg-white px-16 py-11 mt-10 lg:mt-0 lg:w-2/5">
-                        <label htmlFor="nom" className="text-lg font-bold mb-2">Nom:</label>
-                        <input id="nom" className="w-full" value={nom} onChange={e => setNom(e.target.value)}/>
-                        <label htmlFor="email" className="text-lg font-bold mt-4 mb-2">Email:</label>
-                        <input id="email" type="email" className="w-full" value={email}
+                        <label htmlFor="nom" className="text-lg font-bold">Nom:</label>
+                        <input id="nom" className="w-full mb-4 mt-1.5" value={nom}
+                               onChange={e => setNom(e.target.value)}/>
+                        <label htmlFor="email" className="text-lg font-bold mb-2">Email:</label>
+                        <input id="email" type="email" className="w-full mb-4 mt-1.5" value={email}
                                onChange={e => setEmail(e.target.value)}/>
-                        <label htmlFor="message" className="text-lg font-bold mt-4 mb-2">Message:</label>
-                        <textarea id="message" className="h-36 w-full" value={message}
+                        <label htmlFor="message" className="text-lg font-bold ">Message:</label>
+                        <textarea id="message" className="h-36 w-full mt-1.5" value={message}
                                   onChange={e => setMessage(e.target.value)}/>
                         <div className="flex justify-center items-center flex-col">
                             <input type="button" onClick={sendMessage} value="Envoyer"
