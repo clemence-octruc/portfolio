@@ -35,8 +35,8 @@ const technosList = technos.map(e => <p key={e} className="">{e}</p>)
 const projectsList = projects.map((e, i) => <Fragment key={e.title}>
     <ProjectBox project={e} inter={inter}></ProjectBox>
     {i < projects.length - 1 ?
-        <div className="flex flex-col items-center w-min ml-6 my-1"><Line></Line><Line></Line><p
-            className="font-bold my-1.5 text-gray">2022</p> <Line></Line><Line></Line></div> : ""}</Fragment>)
+        <FadeIn speedFactor={2} direction={"top"}><div className="flex flex-col items-center w-min ml-6 my-1"><Line></Line><Line></Line><p
+            className="font-bold my-1.5 text-gray">2022</p> <Line></Line><Line></Line></div></FadeIn> : ""}</Fragment>)
 
 export default function Home() {
 
@@ -110,31 +110,31 @@ export default function Home() {
                         <p className="text-gray mt-12 max-w-lg mx-2 lg:mx-0">{myselfText}</p>
                         <p className="text-gray mt-4 max-w-lg mx-2 lg:mx-0">{myselfText2}</p>
                     </div>
-                    <FadeIn classes={"h-1/2 hidden lg:block w-auto"}><img src="screens.png" alt="" className=""/></FadeIn>
+                    <FadeIn direction={"right"} classes={"h-1/2 hidden lg:block w-auto"}><img src="screens.png" alt="" className=""/></FadeIn>
                 </div>
                 <div className={open_sans.className + " mx-2 lg:mx-20"} id="Compétences">
                     <h2 className="text-3xl pt-36 font-bold">Compétences</h2>
                     <div className="flex items-start flex-wrap gap-x-10 lg:gap-x-20">
 
-                        <FadeIn
+                        <FadeIn direction={"left"}
                             classes={"bg-white shadow-xl flex-grow lg:flex-grow-0 pt-10 pb-11 px-10 lg:px-12 mt-9 rounded-[1.75rem]"}>
                             <h3 className="font-bold text-xl">Langages :</h3>
                             <div
                                 className="grid-cols-2 px-3 grid-rows-3 grid gap-x-16 gap-y-6 mt-8 text-gray font-semibold">{languagesList}</div>
                         </FadeIn>
 
-                        <FadeIn
+                        <FadeIn direction={"right"}
                             classes="bg-white shadow-xl pt-10 pb-11 px-10 flex-grow lg:flex-grow-0 lg:px-12 mt-9 lg:w-1/3 rounded-[1.75rem]">
                             <h3 className="font-bold text-xl">Technologies et pratiques :</h3>
                             <div className="flex flex-col px-3 mt-7 gap-y-4 font-semibold text-gray">{technosList}</div>
                         </FadeIn>
-                        <FadeIn
+                        <FadeIn direction={"bottom"}
                             classes={"bg-white shadow-xl pt-10 pb-11 flex-grow lg:flex-grow-0 px-10 lg:px-12 mt-9 lg:w-[30%] rounded-[1.75rem]"}>
                             <h3 className="font-bold text-xl">Frameworks :</h3>
                             <div
                                 className="grid-cols-1 grid-rows-3 px-3 grid gap-6 flex-grow lg:flex-grow-0 mt-6 font-semibold text-gray">{frameworksList}</div>
                         </FadeIn>
-                        <FadeIn
+                        <FadeIn direction={"bottom"}
                             classes="bg-white  shadow-xl pt-10 pb-11 px-10 lg:px-12 mt-9  rounded-[1.75rem] lg:w-[50%]">
                             <h3 className="font-bold text-xl">Outils :</h3>
                             <div className="flex-wrap flex px-3 gap-x-6 gap-y-6 mt-4">{outilsList}</div>
@@ -145,15 +145,14 @@ export default function Home() {
                 <div className={open_sans.className + " mx-2 lg:mx-20"} id="Parcours & projets">
                     <h2 className="text-3xl pt-36 font-bold">Projets</h2>
                     <div className="text-lg ml-5 flex font-bold  text-gray mt-8">
-                        <div className="flex items-center flex-col">
+                       <FadeIn speedFactor={2} direction={"top"} classes={"flex items-center flex-col"}>
                             <p className="mb-1.5">2018</p>
                             <Line></Line>
                             <Line></Line>
                             <Line></Line>
                             <p className="my-1.5">2020</p>
                             <Line></Line>
-                            <Line></Line>
-                        </div>
+                            <Line></Line></FadeIn>
                         <p className="text-xl lg:mt-12 mt-4 font-bold ml-16">Divers projets informatiques (arduino, bots
                             discord,
                             ect...)</p>
