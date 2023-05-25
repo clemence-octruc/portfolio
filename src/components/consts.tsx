@@ -1,10 +1,10 @@
 import {Project} from "@/pages";
 
 export const myselfText = `Développeur web/mobile junior, je cherche un premier emploi après plusieurs années de projets concrets réalisés par moi même et en groupe. Au cours de ces expériences j'ai compris que la programmation était là où je voulais établir ma carrière. Je cherche donc aujourd'hui un emploi qui me permettrait de m'intégrer dans des projets de plus grande envergure et enjeux `
-export const myselfText2 = `Ma manière de travailler est très autonome puisque j'ai longtemps été livré à moi même, je n'ai besoin d'aide que rarement et ait l'habitude de m'adapter à de nouvelles technologies ou codebases. Je cherche toujours à optimiser mon temps et être rigoureux, mais je sais faire des compromis quand les deadlines approchent.`
+export const myselfText2 = `Je sais travailler par moi même, mais j’ai aussi eu de nombreux projets en collaboration avec d’autres développeurs et sait collaborer que ce soit humainement et par les outils de collaboration. Je maîtrise l'anglais à l'écrit comme à l'oral.`
 
 export const languages = ["Javascript", "Python", "Typescript", "HTML5", "Dart", "CSS3"]
-export const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "REST API, implémentation d'APIs", '3rd party sign in',]
+export const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "Méthodologie agile", 'Programmation fonctionelle et orientée objet ',]
 export const frameworks = [["svelte.png", "Svelte, Sveltekit"], ["flutter.png", "Flutter"], ["nodejs.png", "Nodejs"], ["react.png", "React"]]
 export const outils = ["vscode", "github", "git", "gcp", "figma", "playconsole", "analytics", "admob", "mongodb", "tailwind", "firebase"]
 export const projects: Project[] = [
