@@ -1,7 +1,7 @@
 import {Project} from "@/pages";
 
 export const myselfText = `Développeuse web/mobile junior, je cherche un premier emploi après plusieurs années de projets concrets réalisés par moi même et en groupe. Au cours de ces expériences j'ai compris que la programmation était là où je voulais établir ma carrière. Je cherche donc aujourd'hui un emploi qui me permettrait de m'intégrer dans des projets de plus grande envergure et enjeux `
-export const myselfText2 = `Je sais travailler par moi même, mais j’ai aussi eu de nombreux projets en collaboration avec d’autres Développeuses et sait collaborer que ce soit humainement et par les outils de collaboration. Je maîtrise l'anglais à l'écrit comme à l'oral.`
+export const myselfText2 = `Je sais travailler par moi même, mais j’ai aussi eu de nombreux projets en collaboration avec d’autres développeurs et sait collaborer que ce soit humainement et par les outils de collaboration. Je maîtrise l'anglais à l'écrit comme à l'oral.`
 
 export const languages = ["Javascript", "Python", "Typescript", "HTML5", "Dart", "CSS3"]
 export const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "Méthodologie agile", 'Programmation fonctionelle et orientée objet ',]
