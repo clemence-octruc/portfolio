@@ -1,7 +1,7 @@
 import {Project} from "@/pages";
 
-export const myselfText = `Développeur web/mobile junior, je cherche un premier emploi après plusieurs années de projets concrets réalisés par moi même et en groupe. Au cours de ces expériences j'ai compris que la programmation était là où je voulais établir ma carrière. Je cherche donc aujourd'hui un emploi qui me permettrait de m'intégrer dans des projets de plus grande envergure et enjeux `
-export const myselfText2 = `Je sais travailler par moi même, mais j’ai aussi eu de nombreux projets en collaboration avec d’autres développeurs et sait collaborer que ce soit humainement et par les outils de collaboration. Je maîtrise l'anglais à l'écrit comme à l'oral.`
+export const myselfText = `Développeuse web/mobile junior, je cherche un premier emploi après plusieurs années de projets concrets réalisés par moi même et en groupe. Au cours de ces expériences j'ai compris que la programmation était là où je voulais établir ma carrière. Je cherche donc aujourd'hui un emploi qui me permettrait de m'intégrer dans des projets de plus grande envergure et enjeux `
+export const myselfText2 = `Je sais travailler par moi même, mais j’ai aussi eu de nombreux projets en collaboration avec d’autres Développeuses et sait collaborer que ce soit humainement et par les outils de collaboration. Je maîtrise l'anglais à l'écrit comme à l'oral.`
 
 export const languages = ["Javascript", "Python", "Typescript", "HTML5", "Dart", "CSS3"]
 export const technos = ["JSON, HTTP, WebSocket", "Email, SSH, Responsive", "Méthodologie agile", 'Programmation fonctionelle et orientée objet ',]
@@ -17,7 +17,7 @@ export const projects: Project[] = [
         stack: "NodeJS, Svelte, Flutter",
         extendedDesc: [
             `D'abord un site web codé avec svelte/sapper. La fonctionalité principale est d'organiser des "matchs" entre les joueurs, plus leur taux de victoire est élevé sur les 7 prochaines parties, plus ils gagnent de monnaie. qu'ils peuvent ensuite échanger contre des récompenses en jeu en environ 100h de jeu.`,
-            "Svelte ne supportant pas de compilation vers une application native (à l'instar de react), nous avons choisi de recoder le produit sous forme d'application avec Flutter. Nous en avons profité pour redesigner le produit avec l'aide des retours que nous avons reçus sur le site. Le backend ayant une codebase séparée de celle du site, nous n'avons pas eu à le modifier"
+            "Svelte ne supportant pas de compilation vers une application native (contrairement à react), nous avons choisi de recoder le produit sous forme d'application avec Flutter. Nous en avons profité pour redesigner le produit avec l'aide des retours que nous avons reçus sur le site. Le backend ayant une codebase séparée de celle du site, nous n'avons pas eu à le modifier"
         ],
         extendedStack: "ExpressJS, MongoDB, GCP, Figma, TailwindCSS, Firebase, Google Analytics",
         assets: ["screens/website.png", "screens/app.png"]
@@ -26,9 +26,9 @@ export const projects: Project[] = [
         href: "https://github.com/MDL-Jules-Verne/balapp",
         date: "2022-2023",
         type: "Application mobile, backend en local",
-        description: `Application permettant d'optimiser les processus d'organisation et de déroulement d'évènements nécessitant billets d'entrée et vestiaires. Au départ, était destiné à l'organisation de bals de promo, maintenant adapté pour des évènements plus diversifiés.
+        description: `Application permettant d'optimiser les processus d'organisation et de déroulement d'évènements nécessitant billets d'entrée et vestiaires. Au départ, était destinée à l'organisation de bals de promo, maintenant adaptée pour des évènements plus diversifiés.
         Fonctionne en LAN entre un serveur sous ExpressJS et un nombre (quasi) illimité de smartphones sous Flutter`,
-        stack: "NodeJS, HTML, Flutter",
+        stack: "NodeJS, Flutter",
         extendedStack: "MongoDB, ExpressJS, Figma, Websocket",
         extendedDesc: ["Génère, enregistre et vérifie des billets par QRcode. Permet recherche et modification des billets depuis les téléphones", "Enregistre et restitue des objets laissés aux vestiaires.", "Intègre un mode hors ligne en cas de défaut du réseau local et un dashboard pour une administration sans connaissance du code depuis le serveur"],
         assets: ["screens/billets+search.png", "screens/vestiaire.png", "screens/dashboard.png"]

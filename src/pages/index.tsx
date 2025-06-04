@@ -83,7 +83,7 @@ export default function Home() {
 
     return (<>
         <Head>
-            <title>Clément Octruc - CV/portfolio développeur</title>
+            <title>Clémence Octruc - CV/portfolio Développeuse</title>
             <meta name="description"
                   content="Mon CV/portfolio retraçant mes expériences, compétences et projets en développement informatique."/>
             <link rel="icon" href="/favicon.png"/>
@@ -101,7 +101,7 @@ export default function Home() {
                             <div>
                                 <h1 className="lg:text-[3.4rem] text-[2.5rem] leading-[1.1] font-extrabold ">Clement <br/> Octruc
                                 </h1>
-                                <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeur <span
+                                <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeuse <span
                                     className="text-primary">web</span> <br className="hidden lg:block"/> et <span
                                     className="text-primary">mobile</span></h2></div>
                             <div className="lg:hidden"><img alt="" src="screens.png" className="w-auto"/></div>
@@ -166,14 +166,14 @@ export default function Home() {
                         <h2 className="text-[1.75rem] lg:text-3xl font-bold">Travaillons ensemble !</h2>
 
                         <p className="text-lg text-gray mt-4" style={inter.style}>Je suis disponible à partir de Juillet
-                            2023 dans toute la France (de préférence région parisienne). D&apos;ici là, je suis ouvert à
+                            2023 dans toute la France (de préférence région parisienne). D&apos;ici là, je suis ouverte à
                             apprendre de nouvelles technologies si vous en utilisez que je ne maîtrise pas encore</p>
 
-                        <p className="font-bold mt-3">Développeur back-end - Développeur front-end - Intégrateur web -
-                            Développeur mobile</p>
+                        <p className="font-bold mt-3">Développeuse back-end - Développeuse front-end - Intégratrice web -
+                            Développeuse mobile</p>
 
                         <p className="font-bold  mt-8">Email:<span
-                            className="text-gray text-sm ml-2">clement.octruc@gmail.com</span></p>
+                            className="text-gray text-sm ml-2">clemence.octruc@proton.me</span></p>
                         <p className="font-bold ">Téléphone:<span
                             className="text-gray text-sm ml-2">07 83 55 99 86</span>
                         </p>
