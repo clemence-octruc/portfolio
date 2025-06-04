@@ -99,7 +99,7 @@ export default function Home() {
                     <div className={open_sans.className}>
                         <div className="flex items-center lg:mt-20 mt-5 gap-x-6">
                             <div>
-                                <h1 className="lg:text-[3.4rem] text-[2.5rem] leading-[1.1] font-extrabold ">Clement <br/> Octruc
+                                <h1 className="lg:text-[3.4rem] text-[2.5rem] leading-[1.1] font-extrabold ">Clémence <br/> Octruc
                                 </h1>
                                 <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeuse <span
                                     className="text-primary">web</span> <br className="hidden lg:block"/> et <span
