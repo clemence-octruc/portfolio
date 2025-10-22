@@ -95,22 +95,23 @@ export default function Home() {
                 {list}
             </nav>
             <main className="pt-28 px-8 lg:px-60 mb-20" id="Qui suis-je">
-                <div className="lg:flex block justify-center space-x-12 lg:space-x-36">
-                    <div className={open_sans.className}>
-                        <div className="flex items-center lg:mt-20 mt-5 gap-x-6">
+                <div className="lg:flex block justify-center lg:ml-4 space-x-12 lg:space-x-28 lg:mt-10">
+                    <div className={open_sans.className} >
+                        <div className="flex items-center lg:mt-10 mt-5 gap-x-6">
                             <div>
                                 <h1 className="lg:text-[3.4rem] text-[2.5rem] leading-[1.1] font-extrabold ">Clémence <br/> Octruc
                                 </h1>
-                                <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Développeuse <span
-                                    className="text-primary">web</span> <br className="hidden lg:block"/> et <span
-                                    className="text-primary">mobile</span></h2></div>
+                                <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Étudiante ingénieure à <span
+                                    className="text-primary">CentraleSupélec, </span>développeuse <span
+                                    className="text-primary">web</span> et <span
+                                    className="text-primary">mobile</span>, </h2></div>
                             <div className="lg:hidden"><img alt="" src="screens.png" className="w-auto"/></div>
                         </div>
 
                         <p className="text-gray mt-12 max-w-lg mx-2 lg:mx-0">{myselfText}</p>
                         <p className="text-gray mt-4 max-w-lg mx-2 lg:mx-0">{myselfText2}</p>
                     </div>
-                    <FadeIn direction={"right"} classes={"h-1/2 hidden lg:block w-auto"}><img src="screens.png" alt="" className=""/></FadeIn>
+                    <FadeIn direction={"right"} classes={"h-2/3 hidden lg:block w-2/3"}><img src="screens.png" alt="" className=""/></FadeIn>
                 </div>
                 <div className={open_sans.className + " mx-2 lg:mx-20"} id="Compétences">
                     <h2 className="text-3xl pt-36 font-bold">Compétences</h2>
@@ -120,7 +121,7 @@ export default function Home() {
                             classes={"bg-white shadow-xl flex-grow lg:flex-grow-0 pt-10 pb-11 px-10 lg:px-12 mt-9 rounded-[1.75rem]"}>
                             <h3 className="font-bold text-xl">Langages :</h3>
                             <div
-                                className="grid-cols-2 px-3 grid-rows-3 grid gap-x-16 gap-y-6 mt-8 text-gray font-semibold">{languagesList}</div>
+                                className="grid-cols-2 px-3 grid-rows-2 grid gap-x-16 gap-y-6 mt-8 text-gray font-semibold">{languagesList}</div>
                         </FadeIn>
 
                         <FadeIn direction={"right"}
@@ -135,7 +136,7 @@ export default function Home() {
                                 className="grid-cols-1 grid-rows-3 px-3 grid gap-6 flex-grow lg:flex-grow-0 mt-6 font-semibold text-gray">{frameworksList}</div>
                         </FadeIn>
                         <FadeIn direction={"bottom"}
-                            classes="bg-white  shadow-xl pt-10 pb-11 px-10 lg:px-12 mt-9  rounded-[1.75rem] lg:w-[50%]">
+                            classes="bg-white  shadow-xl pt-10 pb-11 px-10 lg:px-12 mt-9  rounded-[1.75rem] lg:w-[40%]">
                             <h3 className="font-bold text-xl">Outils :</h3>
                             <div className="flex-wrap flex px-3 gap-x-6 gap-y-6 mt-4">{outilsList}</div>
                         </FadeIn>
@@ -165,15 +166,10 @@ export default function Home() {
                     <div className="mt-24 mx-5 lg:mx-0 lg:w-3/5">
                         <h2 className="text-[1.75rem] lg:text-3xl font-bold">Travaillons ensemble !</h2>
 
-                        <p className="text-lg text-gray mt-4" style={inter.style}>Je suis disponible à partir de Juillet
-                            2023 dans toute la France (de préférence région parisienne). D&apos;ici là, je suis ouverte à
-                            apprendre de nouvelles technologies si vous en utilisez que je ne maîtrise pas encore</p>
-
-                        <p className="font-bold mt-3">Développeuse back-end - Développeuse front-end - Intégratrice web -
-                            Développeuse mobile</p>
+                        <p className="font-bold mt-8">Développeuse back-end/front-end/mobile</p>
 
                         <p className="font-bold  mt-8">Email:<span
-                            className="text-gray text-sm ml-2">clemence.octruc@proton.me</span></p>
+                            className="text-gray text-sm ml-2">clemence.octruc@gmail.com</span></p>
                         <p className="font-bold ">Téléphone:<span
                             className="text-gray text-sm ml-2">07 83 55 99 86</span>
                         </p>
