@@ -104,7 +104,7 @@ export default function Home() {
                                 <h2 className="mt-6 lg:mt-8 text-gray text-2xl font-bold">Étudiante ingénieure à <span
                                     className="text-primary">CentraleSupélec, </span>développeuse <span
                                     className="text-primary">web</span> et <span
-                                    className="text-primary">mobile</span>, </h2></div>
+                                    className="text-primary">mobile</span> </h2></div>
                             <div className="lg:hidden"><img alt="" src="screens.png" className="w-auto"/></div>
                         </div>
 
